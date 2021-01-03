@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>netcoreapp2.0;netcoreapp2.1;netcoreapp2.2;netcoreapp3.0;netcoreapp3.1;net461;net462;net47;net471;net472;net48;net5.0</TargetFrameworks>
+    <RootNamespace>Nuclear.Test.Worker</RootNamespace>
+    <StartupObject>Nuclear.Test.Worker.Program</StartupObject>
+    <Platforms>x64;x86</Platforms>
+    <Version>2.0.0</Version>
+  </PropertyGroup>
+  
+  <Import Project="..\Configurations.targets" />
+  
+  <ItemGroup Condition="'$(Configuration)' == 'Release'">
+    <PackageReference Include="Nuclear.Test" Version="2.0.0" />
+    <PackageReference Include="Nuclear.Test.Writer.Console" Version="2.0.0" />
+    <PackageReference Include="Nuclear.Test.Writer.Json" Version="2.0.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(Configuration)' == 'Debug' OR '$(Configuration)' == 'Integration'">
+    <Reference Include="Nuclear.Exceptions">
+      <HintPath>..\..\..\Nuclear.Net\bin\Nuclear.Exceptions\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Exceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclear.Extensions">
+      <HintPath>..\..\..\Nuclear.Net\bin\Nuclear.Extensions\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclear.Assemblies">
+      <HintPath>..\..\..\Nuclear.Net\bin\Nuclear.Assemblies\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Assemblies.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclear.TestSite.Contracts">
+      <HintPath>..\..\..\Nuclear.TestSite\bin\Nuclear.TestSite\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.TestSite.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclear.Test.Contracts">
+      <HintPath>..\..\..\Nuclear.Test\bin\Nuclear.Test.Contracts\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Test.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclear.Test">
+      <HintPath>..\..\..\Nuclear.Test\bin\Nuclear.Test\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Test.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclear.Test.Writer.Console">
+      <HintPath>..\..\..\Nuclear.Test\bin\Nuclear.Test.Writer.Console\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Test.Writer.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Nuclear.Test.Writer.Json">
+      <HintPath>..\..\..\Nuclear.Test\bin\Nuclear.Test.Writer.Json\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Test.Writer.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="log4net" Version="2.0.12" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Update="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
