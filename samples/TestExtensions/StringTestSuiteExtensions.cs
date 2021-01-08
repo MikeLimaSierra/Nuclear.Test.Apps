@@ -11,7 +11,7 @@ namespace TestExtensions {
             String customMessage = null, [CallerFilePath] String _file = null, [CallerMemberName] String _method = null) {
 
             if(@string == null) {
-                _this.FailTest($"Parameter '{nameof(@string)}' is null.", _file, _method);
+                _this.InternalFail($"Parameter '{nameof(@string)}' is null.", _file, _method);
                 return;
             }
 
