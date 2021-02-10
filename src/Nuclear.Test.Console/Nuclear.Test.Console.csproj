@@ -35,7 +35,7 @@
       <HintPath>..\..\..\Nuclear.TestSite\bin\Nuclear.TestSite\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.TestSite.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Nuclear.Test.Contracts">
-      <HintPath>..\..\..\Nuclear.Test\bin\Nuclear.Test.Contracts\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Test.Contracts.dll</HintPath>
+      <HintPath>..\..\..\Nuclear.Test\bin\Nuclear.Test\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Test.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="Nuclear.Test">
       <HintPath>..\..\..\Nuclear.Test\bin\Nuclear.Test\AnyCPU\$(Configuration)\netstandard2.0\Nuclear.Test.dll</HintPath>
