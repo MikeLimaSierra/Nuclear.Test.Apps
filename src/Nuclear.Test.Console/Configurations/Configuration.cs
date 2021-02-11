@@ -38,7 +38,7 @@ namespace Nuclear.Test.Console.Configurations {
             Locator = new LocatorConfig() {
                 SearchDirectory = "%USERPROFILE%/source",
                 SearchDepth = -1,
-                SearchPattern = "*Tests.dll",
+                SearchPattern = "*Test*.dll",
                 IgnoredDirectoryNames = new List<String>() {
                     "obj",
                     ".vs"
@@ -51,14 +51,14 @@ namespace Nuclear.Test.Console.Configurations {
             Proxy = new ClientConfig() {
                 Directory = "%APPDATA%/Nuclear.Test.Proxy/",
                 ExecutableName = "Nuclear.Test.Proxy.exe",
-                StartClientVisible = false,
+                StartClientVisible = true,
                 AutoShutdown = true,
                 WriteReport = false
             },
             Worker = new ClientConfig() {
                 Directory = "%APPDATA%/Nuclear.Test.Worker/",
                 ExecutableName = "Nuclear.Test.Worker.exe",
-                StartClientVisible = false,
+                StartClientVisible = true,
                 AutoShutdown = true,
                 WriteReport = false
             },
